@@ -1,0 +1,157 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  background-color: #F4F3EE; /* Isabelline */
+  flex-direction: column;
+  gap: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #336699; /* Lapis Lazuli */
+}
+
+h2 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #5C677D; /* Payne's Gray */
+}
+
+/* Flex Container for Forms */
+.forms-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 100px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+/* Form Styles */
+form {
+  background-color: #D9D9D9; /* Platinum */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form h2 {
+  font-size: 18px;
+  color: #5C677D; /* Payne's Gray */
+  margin-bottom: 15px;
+}
+
+/* Input and Select Styling */
+form input,
+form select,
+form button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #A8ADB6; /* French Gray */
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  background-color: #F4F3EE; /* Isabelline */
+  color: #5C677D; /* Payne's Gray */
+}
+
+form select {
+  background-color: #F4F3EE; /* Isabelline */
+  color: #5C677D; /* Payne's Gray */
+}
+
+form button {
+  background-color: #94ADC4; /* Powder Blue */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #5C677D; /* Payne's Gray */
+}
+
+/* Input Focus Styling */
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #336699; /* Lapis Lazuli */
+}
+
+input::placeholder {
+  color: #A8ADB6; /* French Gray */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  body {
+    height: auto; /* Allow scrolling if content exceeds viewport height */
+  }
+
+  h1 {
+    font-size: 24px;
+    margin: 15px 0;
+  }
+
+  h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .forms-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  form {
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  form h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  form input,
+  form select,
+  form button {
+    font-size: 14px;
+    padding: 12px;
+    margin: 6px 0;
+  }
+
+  form button {
+    font-size: 16px;
+  }
+
+  /* Ensuring input fields are always visible */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"] {
+    padding: 12px;
+  }
+}

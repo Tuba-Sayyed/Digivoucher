@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Superboss Voucher View</title>
+  <link rel="stylesheet" href="superboss.css">
+  <link rel="icon" href="logo.png" type="image/x-icon">
+</head>
+<body>
+  <h1>Superboss Dashboard </h1>
+
+  <div class="container">
+    <button id="createVoucherBtn">Create New Voucher</button>
+    <button id="fetchVouchersBtn">Fetch Vouchers</button>
+  </div>
+
+  <!-- Popup for creating new voucher -->
+  <div id="voucherPopup" style="display: none;">
+    <div class="popup-content">
+      <button id="closePopup">&times;</button>
+      <h2>Create New Voucher</h2>
+
+      <!-- Form Fields -->
+      <div class="field">
+        <label for="billNo">Bill No:</label>
+        <input type="text" id="billNo" placeholder="Auto-generated" readonly>
+      </div>
+
+      <div class="field">
+        <label for="date">Date:</label>
+        <input type="text" id="date" readonly>
+      </div>
+
+      <div class="field">
+        <label for="paidTo">Paid To:</label>
+        <input type="text" id="paidTo" placeholder="Enter name" readonly>
+      </div>
+
+      <!-- Table for Categories -->
+      <table id="categoriesTable">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Receipt (PDF)</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows will be dynamically added here -->
+        </tbody>
+      </table>
+      <button id="addCategoryBtn">Add Category</button>
+
+      <!-- Total and Words -->
+      <div class="field">
+        <label for="total">Total:</label>
+        <input type="number" id="total" readonly>
+      </div>
+      <div class="field">
+        <label for="inWords">In Words:</label>
+        <input type="text" id="inWords" readonly>
+      </div>
+
+      <button id="submitVoucherBtn">Submit Voucher</button>
+    </div>
+  </div>
+  <table id="vouchersTable">
+    <thead>
+      <tr>
+        <th>Paid To</th>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Vouchers will be populated here -->
+    </tbody>
+  </table>
+
+  <h2>My Generated Vouchers</h2>
+  <table id="superbossVouchersTable" style="display: none;">
+    <thead>
+      <tr>
+        <th>Bill No</th>
+        <th>Date</th>
+        <th>Total</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Manager vouchers will be dynamically populated here -->
+    </tbody>
+  </table>
+
+  <div id="modalOverlay"></div>
+  <div id="voucherModal">
+    <div id="voucherDetails"></div>
+    <button id="closeBtn">Close</button>
+  </div>
+
+  <script type="module" src="superboss.js"></script>
+</body>
+</html>

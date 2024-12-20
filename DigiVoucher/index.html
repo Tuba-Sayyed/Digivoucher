@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="logo.png" type="image/x-icon">
+
+  <title>Login and Registration</title>
+  <!-- Firebase SDK -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- <h1>Login and Registration</h1> -->
+
+  <!-- Flex Container for Forms -->
+  <div class="forms-container">
+    <!-- Registration Form -->
+    <div>
+      <h2>Register</h2>
+      <form id="registerForm">
+        <input type="text" id="regName" placeholder="Name" required><br>
+        <input type="email" id="regEmail" placeholder="Email" required><br>
+        <input type="password" id="regPassword" placeholder="Password" required><br>
+        <input type="text" id="regCompany" placeholder="Company" list="companyList" required><br>
+        <datalist id="companyList"></datalist>
+        <select id="regRole" required>
+          <option value="employee">Employee</option>
+          <option value="manager">Manager</option>
+          <option value="accountant">Accountant</option>
+          <option value="superboss">Superboss</option>
+        </select><br>
+        <button type="submit">Register</button>
+      </form>
+    </div>
+
+    <!-- Login Form -->
+    <div>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="email" id="loginEmail" placeholder="Email" required><br>
+        <input type="password" id="loginPassword" placeholder="Password" required><br>
+        <input type="text" id="loginCompany" placeholder="Company" list="companyList" required><br>
+        <select id="loginRole" required>
+          <option value="employee">Employee</option>
+          <option value="manager">Manager</option>
+          <option value="accountant">Accountant</option>
+          <option value="superboss">Superboss</option>
+
+        </select><br>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Custom Scripts -->
+  <script type="module" src="scripts.js"></script>
+</body>
+</html>

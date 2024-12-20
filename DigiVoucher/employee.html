@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee - DigiVoucher</title>
+  <link rel="stylesheet" href="employee.css">
+  <link rel="icon" href="logo.png" type="image/x-icon">
+  <!-- Firebase SDKs -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.1.2/firebase-storage.js"></script>
+  <!-- Your JavaScript file -->
+  <script type="module" defer src="employee.js"></script>
+</head>
+<body>
+  <div class="container">
+    <button id="createVoucherBtn">Create New Voucher</button>
+  </div>
+
+  <!-- Popup for creating new voucher -->
+  <div id="voucherPopup" style="display: none;">
+    <div class="popup-content">
+      <button id="closePopup">&times;</button>
+      <h2>Create New Voucher</h2>
+
+      <!-- Form Fields -->
+      <div class="field">
+        <label for="billNo">Bill No:</label>
+        <input type="text" id="billNo" placeholder="Auto-generated" readonly>
+      </div>
+
+      <div class="field">
+        <label for="date">Date:</label>
+        <input type="text" id="date" readonly>
+      </div>
+
+      <div class="field">
+        <label for="paidTo">Paid To:</label>
+        <input type="text" id="paidTo" placeholder="Enter name" readonly>
+      </div>
+
+      <!-- Table for Categories -->
+      <table id="categoriesTable">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Receipt (PDF)</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows will be dynamically added here -->
+        </tbody>
+      </table>
+      <button id="addCategoryBtn">Add Category</button>
+
+      <!-- Total and Words -->
+      <div class="field">
+        <label for="total">Total:</label>
+        <input type="number" id="total" readonly>
+      </div>
+      <div class="field">
+        <label for="inWords">In Words:</label>
+        <input type="text" id="inWords" readonly>
+      </div>
+
+      <button id="submitVoucherBtn">Submit Voucher</button>
+    </div>
+  </div>
+  
+<!-- Table to display vouchers -->
+<button id="fetchVouchersBtn">Fetch Vouchers</button>
+<table id="voucherTable">
+  <thead>
+    <tr>
+      <th>Bill No</th>
+      <th>Date</th>
+      <th>Total</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody id="voucherTableBody">
+    <!-- Voucher rows will be populated here -->
+  </tbody>
+</table>
+
+<!-- Popup for voucher details -->
+<div id="voucherDetailPopup" style="display:none;">
+  <div>
+    <button id="closeDetailPopup">Close</button>
+    <h3>Voucher Details</h3>
+    <p><strong>Bill No:</strong> <span id="voucherDetailBillNo"></span></p>
+    <p><strong>Date:</strong> <span id="voucherDetailDate"></span></p>
+    <p><strong>Total:</strong> <span id="voucherDetailTotal"></span></p>
+    <p><strong>Status:</strong> <span id="voucherDetailStatus"></span></p>
+    <!-- Add more voucher details as needed -->
+  </div>
+</div>
+
+  <div id="modalOverlay"></div>
+  <div id="voucherModal">
+    <div id="voucherDetails"></div>
+    <button id="closeBtn">Close</button>
+  </div>
+</div>
+</body>
+</html>

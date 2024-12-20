@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="logo.png" type="image/x-icon">
+  <title>Accountant Dashboard</title>
+  <link rel="stylesheet" href="accountant.css">
+</head>
+<body>
+  <h1>Accountant Dashboard</h1>
+  
+  <table id="vouchersTable">
+    <thead>
+      <tr>
+        <th>Paid To</th>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Vouchers will be populated here -->
+    </tbody>
+  </table>
+
+  <div id="modalOverlay"></div>
+  <div id="voucherModal">
+    <div id="voucherDetails"></div>
+    <button id="closeBtn">Close</button>
+  </div>
+
+  <div id="payModal" class="hidden">
+    <div class="modal-content">
+      <h2>Payment</h2>
+      <label for="paymentMode">Payment Mode:</label>
+      <select id="paymentMode">
+        <option value="Cash">Cash</option>
+        <option value="Card">Card</option>
+        <option value="UPI">Online</option>
+        <option value="Cheque">Cheque</option>
+      </select>
+      <label for="paymentAmount">Amount:</label>
+      <input type="number" id="paymentAmount" placeholder="Enter payment amount" />
+      <button id="payConfirmBtn">Confirm</button>
+      <button id="payCancelBtn">Cancel</button>
+    </div>
+  </div>
+  <script type="module" src="accountant.js"></script>
+</body>
+</html>
